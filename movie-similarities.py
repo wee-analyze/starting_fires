@@ -4,13 +4,13 @@ import sys
 from pyspark import SparkConf, SparkContext
 from math import sqrt  # will be used to computer similarities
 
-# def loadMovieNames():
-    # movieNames = {}
-    # with open("ml100k/u.item", encoding='ascii', errors='ignore') as f:
-        # for line in f:
-            # fields = line.split('|')
-            # movieNames[int(fields[0])] = fields[1]
-    # return movieNames
+def loadMovieNames():
+    movieNames = {}
+    with open("u.item") as f:
+        for line in f:
+            fields = line.split('|')
+            movieNames[int(fields[0])] = fields[1]
+    return movieNames
 
 def parse_names(line):
     movie_names = {}
@@ -56,9 +56,7 @@ def computeCosineSimilarity(ratingPairs):
 sc = SparkContext("yarn")
 
 print("\nLoading movie names...")
-id_lines = sc.textFile("hdfs://.../ml100k/u.item")
-id_lines_rdd = id_lines.map(parse_names)
-namesDict = id_lines_rdd.collectAsMap()   # creates key:value dict (id:movie)
+namesDict = loadMovieNames() 
 
 data = sc.textFile("hdfs://.../ml100k/u.data")
 
