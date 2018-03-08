@@ -1,5 +1,3 @@
-## script needs fixing. doesn't work when making rdd dictionary
-
 import sys
 from pyspark import SparkConf, SparkContext
 from math import sqrt  # will be used to computer similarities
