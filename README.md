@@ -3,7 +3,7 @@
 Spark 2.1, Python 2.7
 
 I completed an online course on Udemy called Taming Big Data with Spark and Python. These were the scripts that we used
-(with some changes that I made). The course covered RDD, various methods, an RDD algorithm from scratch, Sparksql, and mllib. I also 
-included a Zeppelin notebook of the stuff covered in Sparksql.
+(with some changes that I made). The course covered RDD, various methods, a recommendation algorith using RDD's 
+which is made from scratch, Sparksql, and mllib.
 
 I have altered the scripts in the course so that they work on an actual Spark cluster using HDFS instead of locally on a computer.
